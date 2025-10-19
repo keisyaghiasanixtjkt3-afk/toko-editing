@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Komputer Editing Profesional</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .search-bar-container {
+            padding: 20px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+        .search-bar-container input[type="text"] {
+            padding: 12px 15px;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 16px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+        .product-section {
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #007bff;
+        }
+        .product-section h2 {
+            color: #007bff;
+            border-left: 5px solid #ffc107;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-item {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            background-color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .product-item h4 {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .product-item p {
+            margin: 5px 0;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .price {
+            font-weight: bold;
+            color: #dc3545; /* Warna Merah */
+            font-size: 1.5em;
+            margin: 15px 0;
+            cursor: pointer; 
+            display: block; /* Agar bisa diklik seluruh area */
+        }
+        .btn-pesan {
+            display: block;
+            background-color: #25d366; /* Warna WhatsApp */
+            color: white;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-pesan:hover {
+            background-color: #128c7e;
+        }
+        .payment-methods {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .payment-methods h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        .payment-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .payment-list li {
+            background-color: #ffeeba;
+            color: #856404;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #d6b35d;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+    @media (max-width: 768px) {
+        .product-item img{
+            max-height: 250px;
+        }
+        .product-item h4 {
+            font-size: 1.4;
+        }
+        .price{
+            font-size: 1.8em;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Toko Komputer Editing 💻</h1>
+        <p>Solusi Terbaik untuk Kebutuhan Editing Video & Grafis Anda.</p>
+    </header>
+
+    <div class="search-bar-container">
+        <input type="text" id="searchBar" placeholder="🔍 Cari Komponen, PC, atau Laptop...">
+    </div>
+
+    <div class="container">
+
+        <div class="payment-methods">
+            <h3>Pilihan Metode Pembayaran Lengkap 💳</h3>
+            <ul class="payment-list">
+                <li>
+                <a href="url_ke_halaman_intruksi_transfer.html"
+                target="_blank">
+                    Transfer Bank (BCA, Mandiri, BRI, BNI)
+                </a>
+            </li>
+                <li>
+                     <a href="url_ke_kebijakan_kartu_kredit.html"
+                target="_blank">
+                    Kartu Kredit (Visa, Mastercard)
+                </a>
+            </li>
+                <li>Virtual Account</li>
+                <li>E-Wallet (OVO, GoPay, Dana)</li>
+                <li>
+                     <a href="url_ke_informasi_cicilan.html"
+                target="_blank">
+                    Cicilan 0% (Kartu Kredit / Paylater)
+                </a>
+            </li>
+            </ul>
+        </div>
+        
+        <div class="product-section" id="komponen-pc">
+            <h2>Komponen untuk Merakit PC Editing Anda sendiri 🛠️</h2>
+            <p>Pilih komponen terbaik untuk performa editing yang maksimal.</p>
+
+            <div class="product-grid">
+
+                <div class="product-item" data-category="prosesor">
+                    <img src="prosesor.jpg" alt="Foto Prosesor">
+                    <h4>Prosesor AMD Ryzen 7 5700X</h4>
+                    <p>AMD Ryzen 7 9700X adalah prosesor Zen 5 generasi terbaru dengan performa tinggi dan efisiensi daya baik, ideal untuk editing, desain, dan rendering berkat dukungan DDR5 dan PCIe 5.0.
+                    </p>
+                <p>
+                Spesifikasi:<br>
+                Arsitektur: Zen 5 (Granite Ridge)<br>
+                Core / Thread: 8 Core / 16 Thread<br>
+                Base Clock: 3.8 GHz<br>
+                Boost Clock: Hingga 5.5 GHz<br>
+                Cache: L2 8 MB, L3 32 MB<br>
+                TDP: 65 Watt<br>
+                Socket: AM5<br>
+                Memori: Mendukung DDR5 Dual Channel<br>
+                PCIe Support: PCIe 5.0<br>
+                Grafis Terintegrasi: AMD Radeon Graphics (RDNA 3)<br>
+                Pendingin: Tidak termasuk dalam paket (disarankan pakai AIO atau tower cooler)<br>
+            </p>
+
+                    <span class="price" onclick="pesanProduk('Prosesor AMD Ryzen 7 5700X', 'Rp 6.599.000')">Rp 6.599.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Prosesor AMD Ryzen 7 5700X', 'Rp 6.599.000')">Pesan Sekarang </a>
+                </div>
+
+                <div class="product-item" data-category="vga">
+                    <img src="vga.jpg" alt="Foto VGA">
+                    <h4>VGA NVIDIA RTX 4060 8GB</h4>
+                    <p>Gigabyte RTX 4060 8GB GDDR6 menawarkan performa tinggi untuk gaming 1080p/1440p dan editing, dilengkapi DLSS, RTX, triple-fan, dan backplate.                       
+                    </p>
+                    <p>
+                     Spesifikasi:<br>
+                    GPU: NVIDIA GeForce RTX 4060<br>
+                    Memori: 8 GB GDDR6<br>
+                    Interface: PCIe (umumnya PCIe 4.0)<br>
+                    Output video: HDMI + DisplayPort (jumlah/versi tergantung model)<br>
+                    Fitur: DLSS, ray tracing, NVENC untuk streaming/encoding<br>
+                    Rekomendasi PSU: min ~550W (tergantung seluruh sistem)<br>
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('VGA NVIDIA RTX 4060 8GB', 'Rp 6.375.000')">Rp 6.375.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('VGA NVIDIA RTX 4060 8GB', 'Rp 6.375.000')">Pesan Sekarang</a>
+                </div>
+
+                <div class="product-item" data-category="ram">
+                    <img src="ram.jpg" alt="Foto RAM">
+                    <h4>RAM Kingston Fury Beast 32GB (2x16) 3600 MHz</h4>
+                    <p>Kingston FURY Beast 32GB (2×16) 3600MHz adalah RAM cepat dan stabil untuk editing, multitasking, serta rendering 4K, dilengkapi heat spreader untuk menjaga suhu tetap dingin.
+                 </p>
+
+                 <p>
+                    Spesifikasi:<br>
+                    Kapasitas: 32GB (2×16GB)<br>
+                    Tipe Memori: DDR4 UDIMM<br>
+                    Kecepatan: 3600MHz<br>
+                    Latensi: CL18 (18-22-22)<br>
+                    Tegangan Operasi: 1.35V<br>
+                    Profil Overclocking: Intel XMP 2.0<br>
+                    Kompatibilitas: Intel & AMD (termasuk Ryzen Ready)<br>
+                    Pendingin: Aluminium heat spreader (anti panas)<br>
+                    Suhu Operasional: 0°C – 70°C<br>
+                    Garansi: Lifetime (seumur hidup)<br>
+                    Untuk harganya tergantung toko dan versi (RGB/non-RGB)<br>
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('RAM 32GB (2x16GB) DDR4', 'Rp 1.700.000')">Rp 1.700.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('RAM 32GB (2x16GB) DDR4', 'Rp 1.700.000')">Pesan Sekarang</a>
+                </div>
+
+                <div class="product-item" data-category="motherboard">
+                    <img src="motherboard.jpg" alt="Foto motherboard">
+                    <h4>ASUS ProArt Z790-CREATOR WIFI</h4>
+                    <p>Motherboard ATX Intel Z790 dirancang untuk content creator dan workstation, menawarkan kestabilan tinggi, konektivitas super cepat dengan Thunderbolt™ 4 dan Ethernet 10Gb, serta desain elegan untuk build profesional.
+                 </p>
+
+                 <p>
+                    Spesifikasi:<br>
+                    Soket: LGA 1700 (Intel Core Gen 14/13/12)<br>
+                    Dukungan Memori: DDR5 (hingga 7200+ MHz OC), 4x DIMM, Max. 192GB<br>
+                    Slot Ekspansi: 2x PCIe 5.0 x16<br>
+                    Penyimpanan: 4x M.2 Slot (PCIe 4.0 x4) + 8x SATA<br>
+                    Konektivitas I/O Belakang: 2x Thunderbolt™ 4 Type-C (40Gbps), 1x 10Gb Ethernet, 1x 2.5Gb Ethernet, Wi-Fi 6E.<br>
+
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('ASUS ProArt Z790-CREATOR WIFI', 'Rp 10.000.000')">Rp 10.000.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('ASUS ProArt Z790-CREATOR WIFI', 'Rp 10.000.000')">Pesan Sekarang</a>
+                </div>
+                
+                <div class="product-item" data-category="ssd">
+                    <img src="ssd.jpg" alt="Foto ssd">
+                    <h4>Samsung 990 PRO 1TB NVMe PCIe4.0.</h4>
+                    <p>SSD NVMe M.2 1TB dengan heatsink bawaan dan antarmuka PCIe Gen 4.0 x4 ini menawarkan kecepatan tinggi untuk loading, transfer data, dan editing berat.
+                 </p>
+
+                 <p>
+                    pesifikasi Utama (untuk 1TB):<br>
+                    Kapasitas: 1TB.<br>
+                    Form Factor: M.2 (2280), dengan heatsink.<br>
+                    Antarmuka: PCIe Gen 4.0 x4, NVMe 2.0.<br>
+                    Kecepatan Baca Sekuensial: Hingga 7.450 MB/s.<br>
+                    Kecepatan Tulis Sekuensial: Hingga 6.900 MB/s.<br>
+                    Total Bytes Written (TBW): 600 TBW.<br>
+                    Cache Memory: 1GB Low Power DDR4 SDRAM.<br>
+
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('Samsung 990 PRO 1TB NVMe PCIe4.0.', 'Rp 2.199.000')">Rp 2.199.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Samsung 990 PRO 1TB NVMe PCIe4.0.', 'Rp 2.199.000')">Pesan Sekarang</a>
+                </div>
+
+                 <div class="product-item" data-category="psu">
+                    <img src="psu.jpg" alt="Foto psu">
+                    <h4>Corsair RM750x (750W, 80+ Gold,Full Modular)</h4>
+                    <p>Corsair RM750x adalah PSU 750W kelas atas yang efisien, senyap, dan stabil, ideal untuk PC editing dan workstation berkat kualitas komponen premium serta perlindungan lengkap.
+                 </p>
+
+                 <p>
+                    Spesifikasi:<br>
+                    Daya: 750 Watt<br>
+                    Efisiensi: 80+ Gold (hingga 90%)<br>
+                    Tipe: Full Modular<br>
+                    Voltase Rail: +12V / 62.5A<br>
+                    Pendingin: Fan 135mm dengan mode senyap (Zero RPM)<br>
+                    Komponen: Kapasitor Jepang 105°C<br>
+                    Proteksi: OVP, OCP, SCP, OTP, OPP<br>
+
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('Corsair RM750x (750W, 80+ Gold,Full Modular)', 'Rp 2.399.000')">Rp 2.399.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Corsair RM750x (750W, 80+ Gold,Full Modular)', 'Rp 2.399.000')">Pesan Sekarang</a>
+                </div>
+
+                    <div class="product-item" data-category="ethernet">
+                    <img src="ethernet.jpg" alt="Foto ethernet">
+                    <h4>Intel X540-T2</h4>
+                    <p>Kartu jaringan PCIe dual port 10GbE ini dirancang untuk server dan workstation, menawarkan transfer data super cepat melalui kabel RJ45, ideal untuk kebutuhan jaringan berat dan profesional.
+                 </p>
+
+                 <p>
+                    Spesifikasi:<br>
+                    Kecepatan Data: 10 Gigabit Ethernet (10GbE), dapat backward compatible ke 1GbE/100Mb.<br>
+                    Port: Dual Port (2 x RJ45).<br>
+                    Antarmuka Bus: PCI Express 2.1 x8.<br>
+                    Kabel: Menggunakan kabel Ethernet standar (disarankan Cat6a untuk 10GbE jarak jauh).<br>
+                    Fitur: Kartu jaringan PCIe dual port 10GbE untuk server dan workstation, dengan kecepatan tinggi dan fitur efisien untuk koneksi stabil.<br>
+                    Estimasi Harga: Karena ini adalah produk kelas server yang lebih tua, harganya sangat bervariasi.<br>
+                    Harga nya tergantung model OEM/Refurbished/Bar<br>
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('Intel X540-T2', 'Rp 4.800.000')">Rp 4.800.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Intel X540-T2.', 'Rp 4.800.000')">Pesan Sekarang</a>
+                </div>
+
+                    <div class="product-item" data-category="casing">
+                    <img src="casing.jpg" alt="Foto casing">
+                    <h4>Lian Li O11 Dynamic</h4>
+                    <p>Lian Li O11 Dynamic adalah casing PC premium dengan kaca tempered dan ruang luas, cocok untuk PC editing berperforma tinggi dengan sistem pendingin besar.
+                 </p>
+
+                 <p>
+                    Spesifikasi:<br>
+                    Tipe: Mid Tower / Dual Chamber<br>
+                    Material: Aluminium, baja, tempered glass<br>
+                    Motherboard: E-ATX / ATX / Micro-ATX / Mini-ITX<br>
+                    Drive Bay: 3×3.5" HDD / 6×2.5" SSD<br>
+                    Slot Ekspansi: 8 slot<br>
+                    I/O Port: 2× USB 3.0, 1× USB-C, Audio in/out<br>
+                    Dukungan Radiator: Hingga 360 mm (atas/samping/bawah)<br>
+                    Panjang GPU Maks: 420 mm<br>
+                    Tinggi CPU Cooler: 155 mm<br>
+                    Dimensi: 446 × 272 × 445 mm<br>
+                 </p>
+
+                    <span class="price" onclick="pesanProduk('Lian Li O11 Dynamic', 'Rp 42.800.000')">Rp 2.800.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Lian Li O11 Dynamic', 'Rp 2.800.000')">Pesan Sekarang</a>
+                </div>
+
+
+                </div>
+        </div>
+
+        <div class="product-section" id="pc-jadi">
+            <h2>PC Sudah Jadi & Periferal Siap Pakai ✨</h2>
+
+            <div class="product-grid">
+                
+                <div class="product-item" data-category="pc-jadi">
+                    <img src="pc.jpg" alt="Foto PC ASUS">
+                    <h4>PC ASUS ROG EVA-02</h4>
+                    <p>ASUS ROG EVA-02 adalah PC premium khusus untuk editing profesional, dengan performa super cepat dan stabil berkat RTX 4090, CPU i9 Gen 14, RAM DDR5, dan pendingin kuat untuk kerja berat tanpa lag.</p>
+                    
+                    <p>
+                        Spesifikasi:<br>
+                        GPU: NVIDIA GeForce RTX 4090 24GB GDDR6X<br>
+                        CPU: Intel Core i9 Gen 14 (didukung Z790 Hero)<br>
+                        RAM: DDR5 hingga 128GB<br>
+                        Storage: SSD NVMe M.2 berkecepatan tinggi<br>
+                        Motherboard: ROG Maximus Z790 Hero EVA-02 Edition<br>
+                        Pendingin: ROG Ryujin III 360 ARGB EVA-02<br>
+                        Casing: ROG Hyperion EVA-02 Edition<br>
+                        PSU: ROG Thor 1000W Platinum II EVA Edition<br>
+
+                    </p>
+                    <span class="price" onclick="pesanProduk('ASUS ROG EVA-02 Siap Pakai', 'Rp 80.000.000')">Rp 80.000.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('PC ASUS ROG EVA-02 Siap Pakai', 'Rp 80.000.000')">Pesan Sekarang</a>
+                </div>
+
+                <div class="product-item" data-category="monitor">
+                    <img src="monitor.jpg" alt="Foto Monitor">
+                    <h4>ASUS ProArt Curved 34.1″ </h4>
+                    <p>Monitor ultrawide melengkung 34.1 inci dengan warna akurat (100% sRGB, ΔE<2) dan resolusi UWQHD, ideal untuk editing foto, video, dan desain profesional.</p>
+
+                    <p>
+                        Spesifikasi:<br>
+                        Ukuran/Rasio Aspek: Umumnya 34 inci / 21:9<br>
+                        Resolusi: UWQHD (3440 x 1440)<br>
+                        Panel: IPS, Desain Lengkung (Curved, umumnya 1900R - 3800R)<br>
+                        Akurasi Warna: Calman Verified, ΔE < 2 (sangat akurat)<br>
+                        Warna: 100% sRGB / Rec. 709 (model tertentu juga 98% DCI-P3)<br>
+                        Konektivitas: USB-C dengan Power Delivery (PD) 90W/96W (untuk laptop), DisplayPort, HDMI.<br>
+
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('ASUS ProArt Curved 34.1', 'Rp 20.700.000')">Rp 20.700.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('ASUS ProArt Curved 34.1', 'Rp 20.700.000')">Pesan Sekarang</a>
+                </div>
+                
+                
+                <div class="product-item" data-category="keyboard">
+                    <img src="keyboard.jpg" alt="Foto Keyboard">
+                    <h4>Blackmagic DaVinci Resolve Editor Keyboard</h4>
+                    <p>Blackmagic DaVinci Resolve Editor Keyboard adalah keyboard profesional dengan wheel presisi dan tombol edit khusus, mempercepat proses editing video, color grading, dan trimming dengan akurat dan efisien.</p>
+
+                    <p>
+                        Spesifikasi:<br>
+                        Koneksi: USB-C dengan daya langsung dari komputer<br>
+                        Wheel (Search Dial): Logam dengan karet grip, mendukung mode Jog, Shuttle, dan Scroll<br>
+                        Tombol Khusus Editing: Cut, Trim, Insert, Ripple, In/Out Point, Timecode, Transisi Cepat<br>
+                        Material: Full metal body (aluminium)<br>
+                        Switch Keyboard: Mekanis, respons cepat dan tahan lama<br>
+                        Tambahan Port: 2× USB-A untuk perangkat tambahan<br>
+                        Kompatibilitas: Windows, macOS, Linux<br>
+                        Ukuran: ±58 cm × 22 cm × 5 cm<br>
+
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('Blackmagic DaVinci Resolve Editor Keyboard', 'Rp 13.820.000')">Rp 13.820.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Blackmagic DaVinci Resolve Editor Keyboard', 'Rp 13.820.000')">Pesan Sekarang</a>
+                </div>
+                
+                <div class="product-item" data-category="speaker">
+                    <img src="speaker.jpg" alt="Foto speaker">
+                    <h4>PreSonus Eris BT 4.5-inch Active Monitors</h4>
+                    <p>Sepasang studio monitor aktif 4.5 inci dengan Bluetooth, menghasilkan suara akurat dan seimbang, ideal untuk editing, musik, dan multimedia profesional.</p>
+
+                    <p>
+                        Spesifikasi Utama:<br>
+                        Woofer (Low-Frequency Driver): 4.5 inci, Woven Composite (Serat Komposit).<br>
+                        Tweeter (High-Frequency Driver): 1 inci, Silk Dome (Dome Sutra).<br>
+                        Amplifikasi: 50 Watt (25W per speaker), Class AB.<br>
+                        Konektivitas: Bluetooth 5.0, Balanced \frac{1}{4} inci TRS, Unbalanced RCA, dan input Aux \frac{1}{8} inci (3.5mm) di depan.<br>
+                        Respon Frekuensi: 70 Hz – 20 kHz.<br>
+                        Kontrol Tuning: Terdapat kontrol akustik untuk menyesuaikan respons High (HF) dan Mid (MF) agar sesuai dengan akustik ruangan.<br>
+                        Fitur Tambahan: Headphone amplifier terintegrasi dengan jack di panel depan.<br>
+
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('PreSonus Eris BT 4.5-inch Active Monitors', 'Rp 3.000.000')"> Rp 3.000.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('PreSonus Eris BT 4.5-inch Active Monitors', 'Rp 3.000.000')">Pesan Sekarang</a>
+                </div>
+                
+                <div class="product-item" data-category="mouse">
+                    <img src="mouse.jpg" alt="Foto mouse">
+                    <h4>Logitech G502 X PLUS</h4>
+                    <p>Logitech G502 X Plus adalah mouse ergonomis dengan sensor HERO 25K super presisi, ideal untuk editing foto, video, dan desain berkat gerakan halus, akurat, dan tanpa delay.</p>
+                    <p>
+                        Spesifikasi:<br>
+                        Konektivitas: Wireless LIGHTSPEED (atau varian kabel tergantung paket)<br>
+                        Sensor: HERO (hingga 25.000 DPI)  tracking akurat<br>
+                        Tombol: ~11 tombol yang dapat diprogram (macro/profile)<br>
+                        Fitur: LIGHTSYNC RGB, DPI switching, profil onboard<br>
+
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('Logitech G502 X PLUS', 'Rp 3.000.000')"> Rp 3.000.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Logitech G502 X PLUS', 'Rp 3.000.000')">Pesan Sekarang</a>
+                </div>
+
+                </div>
+        </div>
+
+        <div class="product-section" id="laptop-editing">
+            <h2>Laptop yang Cocok untuk Para Editing 💻 </h2>
+
+            <div class="product-grid">
+                
+                <div class="product-item" data-category="laptop">
+                    <img src="laptop.jpg" alt="Foto Laptop Lenovo">
+                    <h4>Lenovo Yoga Slim 7x 14 (Snapdragon X Elite, varian 32 GB / 1 TB).</h4>
+                    <p>Laptop tipis kelas ultrabook dengan layar besar bezel tipis, ideal untuk produktivitas dan multimedia, dengan opsi RAM dan SSD bervariasi sesuai kebutuhan.</p>
+
+                    <p>
+                        Spesifikasi:<br>
+                        Sistem operasi: Windows 11 (biasa)<br>
+                        Layar: 14"–16" IPS / OLED (resolusi tergantung model)<br>
+                        CPU: varian mobile (Intel/AMD) — cek SKU penjual untuk tipe pasti<br>
+                        RAM: biasanya 8GB / 16GB / 32GB (pilih sesuai kebutuhan)<br>
+                        Penyimpanan: SSD NVMe (256GB / 512GB / 1TB opsi umum)<br>
+                        Port: USB-C (Thunderbolt tergantung model), USB-A, HDMI/minijack tergantung model<br>
+
+                    </p>
+
+                    <span class="price" onclick="pesanProduk('Lenovo Yoga Slim 7x 14 (Snapdragon X Elite, varian 32 GB / 1 TB).','Rp 19.049.000'">Rp 19.049.000</span>
+                    <a href="javascript:void(0)" class="btn-pesan" onclick="kirimWA('Lenovo Yoga Slim 7x 14 (Snapdragon X Elite, varian 32 GB / 1 TB).', 'Rp 19.049.000'">Pesan Sekarang</a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div> <footer class="footer">
+        <p>Hubungi Kami untuk Konsultasi dan Pemesanan:</p>
+        <p>👤 Fahri (Komponen PC): <a href="https://wa.me/6283187341134">+62 831-8734-1134</a></p>
+        <p>👧 Keisya (PC Jadi & Laptop): <a href="https://wa.me/62895703167278">+62 895-7031-67278</a></p>
+        <p>&copy; 2025 Toko Komputer Editing Profesional</p>
+    </footer>
+
+    <script>
+        // Nomor Kontak
+        const noFahri = "6283187341134"; 
+        const noKeisya = "62895703167278";
+
+        // Fungsi utama untuk mengarahkan ke WhatsApp
+        function kirimWA(namaProduk, harga, tujuan) {
+            let noTujuan;
+            let namaPenerima;
+            let kategori;
+
+            if (tujuan === 'keisya') {
+                noTujuan = noKeisya;
+                namaPenerima = "Keisya";
+                kategori = "PC Jadi / Laptop";
+            } else {
+                noTujuan = noFahri;
+                namaPenerima = "Fahri";
+                kategori = "Komponen PC";
+            }
+            
+            const pesan = `Halo ${namaPenerima} (${kategori}), saya ingin memesan produk:\n\n*Nama Produk:* ${namaProduk}\n*Harga:* ${harga}\n\nMohon diproses. Terima kasih.`;
+            const urlWA = `https://wa.me/${noTujuan}?text=${encodeURIComponent(pesan)}`;
+            window.open(urlWA, '_blank');
+        }
+
+        // Fungsi yang dipanggil saat mengklik harga
+        function pesanProduk(namaProduk, harga, tujuan) {
+             kirimWA(namaProduk, harga, tujuan);
+        }
+
+        // Fungsionalitas Search Bar
+        document.getElementById('searchBar').addEventListener('keyup', function() {
+            const searchText = this.value.toLowerCase();
+            const productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(item => {
+                const textContent = item.textContent.toLowerCase();
+                // Jika teks produk mengandung kata kunci pencarian, tampilkan
+                if (textContent.includes(searchText)) {
+                    item.style.display = 'block'; 
+                } else {
+                    item.style.display = 'none';  
+                }
+            });
+        });
+    </script>
+</body>
+</html>
